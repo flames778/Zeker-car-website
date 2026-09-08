@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#app-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--accent-gold);color:var(--bg-color);">Skip to content</a>
+    <a href="#app-content" class="skip-link">Skip to content</a>
+
+    <canvas id="particle-canvas"></canvas>
 
     <header class="global-header" role="banner">
         <div class="logo" data-target="home" tabindex="0" role="button" aria-label="Go to homepage">Scoosh Autos</div>
@@ -25,8 +27,15 @@
             <a href="#" data-target="zeekr8x" class="nav-link">Zeekr 8X</a>
             <a href="#" data-target="zeekr9x" class="nav-link">Zeekr 9X</a>
             <a href="#" data-target="roadster" class="nav-link">Roadster</a>
+            <a href="#" data-target="configurator" class="nav-link">Configure</a>
         </nav>
-        <button class="reserve-btn" aria-label="Reserve a vehicle">Reserve</button>
+        <div class="header-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon-dark">&#9790;</span>
+                <span class="theme-icon-light">&#9728;</span>
+            </button>
+            <button class="reserve-btn" aria-label="Reserve a vehicle">Reserve</button>
+        </div>
     </header>
 
     <main id="app-content" role="main" aria-live="polite">
