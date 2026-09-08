@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scoosh Autos - Imperial Edition luxury electric vehicles. Cybertruck, Zeekr 8X, Zeekr 9X, and Roadster. Bespoke craftsmanship meets electric performance.">
+    <meta name="keywords" content="luxury electric car, Scoosh Autos, Cybertruck, Zeekr, Roadster, Imperial Edition">
+    <meta name="author" content="Scoosh Autos">
+    <meta property="og:title" content="Scoosh Autos - Imperial Edition">
+    <meta property="og:description" content="The summit of sophistication. Bespoke luxury electric vehicles crafted for the elite.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#d4af37">
+    <title>Scoosh Autos | Imperial Edition Luxury Electric Vehicles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#app-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem;background:var(--accent-gold);color:var(--bg-color);">Skip to content</a>
+
+    <header class="global-header" role="banner">
+        <div class="logo" data-target="home" tabindex="0" role="button" aria-label="Go to homepage">Scoosh Autos</div>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#" data-target="cybertruck" class="nav-link">Cybertruck</a>
+            <a href="#" data-target="zeekr8x" class="nav-link">Zeekr 8X</a>
+            <a href="#" data-target="zeekr9x" class="nav-link">Zeekr 9X</a>
+            <a href="#" data-target="roadster" class="nav-link">Roadster</a>
+        </nav>
+        <button class="reserve-btn" aria-label="Reserve a vehicle">Reserve</button>
+    </header>
+
+    <main id="app-content" role="main" aria-live="polite">
+        <!-- Content injected by JS -->
+    </main>
+
+    <footer class="global-footer" role="contentinfo">
+        <div class="footer-logo">SCOOSH AUTOS</div>
+        <div class="footer-links">
+            <a href="#" data-modal="privacy">Privacy</a>
+            <a href="#" data-modal="legal">Legal</a>
+            <a href="#" data-modal="contact">Contact</a>
+        </div>
+        <div class="copyright">&copy; 2026 Scoosh Autos. All Rights Reserved.</div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
