@@ -50,7 +50,7 @@ body {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -168,63 +168,69 @@ nav a:hover, nav a.active {
 }
 
 /* ========== PAGE LAYOUTS ========== */
-#app-content {
-    min-height: 100vh;
-    padding-top: 6rem;
-    position: relative;
-    z-index: 1;
-}
-
 .page-section {
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    opacity: 1;
+}
+
+#app-content {
+    min-height: 100vh;
+    padding-top: 6rem;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#app-content.page-visible {
+    opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* ========== SCROLL ANIMATIONS ========== */
-.reveal {
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .reveal-left.revealed {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: fadeInLeft 0.8s ease forwards;
 }
 
 .reveal-right.revealed {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.reveal-scale {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: fadeInRight 0.8s ease forwards;
 }
 
 .reveal-scale.revealed {
-    opacity: 1;
-    transform: scale(1);
+    animation: fadeInScale 0.8s ease forwards;
 }
 
 /* ========== HERO SECTION ========== */

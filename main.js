@@ -1004,9 +1004,7 @@ function renderPage(modelId) {
     if (!data) return;
 
     scrollAnimator.disconnect();
-
-    appContent.style.opacity = '0';
-    appContent.style.animation = 'none';
+    appContent.classList.remove('page-visible');
 
     if (modelId === 'home') {
         appContent.style.paddingTop = '0';
@@ -1014,9 +1012,9 @@ function renderPage(modelId) {
         appContent.style.paddingTop = '6rem';
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         if (data.isCustomHtml) {
             appContent.innerHTML = data.html;
         } else {
@@ -1048,7 +1046,7 @@ function renderPage(modelId) {
             `;
         }
 
-        appContent.style.animation = 'fadeIn 0.8s forwards';
+        appContent.classList.add('page-visible');
 
         navLinks.forEach(link => {
             link.classList.toggle('active', link.dataset.target === modelId);
