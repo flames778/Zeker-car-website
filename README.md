@@ -55,3 +55,7 @@ npx serve .
 ## License
 
 © 2026 Scoosh Autos. All Rights Reserved.
+
+## Project Notes
+
+- 2026-09-12: Verified responsive layout and configurator pricing logic for Imperial Edition lineup.
