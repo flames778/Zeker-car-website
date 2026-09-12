@@ -59,3 +59,4 @@ npx serve .
 ## Project Notes
 
 - 2026-09-12: Verified responsive layout and configurator pricing logic for Imperial Edition lineup.
+- 2026-09-12: Confirmed dark/light theme persistence and particle background performance across viewports.
